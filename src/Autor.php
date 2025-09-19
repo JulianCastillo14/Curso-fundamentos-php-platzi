@@ -1,5 +1,6 @@
 <?php
 
+namespace App;
 class Autor
 {
     public function __construct(

@@ -1,7 +1,10 @@
 <?php
 
-require '08_Curso.php';
-require '08_Autor.php';
+require __DIR__ . '/vendor/autoload.php';
+
+use App\Curso;
+use App\Autor;
+use App\TipoCurso;
 
 $curso = new Curso(
     titulo: "Curso de fundamentos de PHP",
@@ -25,10 +28,11 @@ $curso = new Curso(
         apellido: "Castillo",
         email: "julian.castillo.platzi@gmail.com",
         biografia: "Desarrollador web con más de 10 años de experiencia, especializado en PHP y frameworks como Laravel. Apasionado por la enseñanza y la creación de contenido educativo para desarrolladores."
-    )
+    ),
+    tipo: TipoCurso::PAGO,
 );
 
-$curso->autor->actualizarEmail("julian.profe@gmail.com")
+$curso->autor->actualizarEmail("ing.julian.profe@gmail.com")
 
 ?>
 

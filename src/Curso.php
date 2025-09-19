@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Curso
 {
     public function __construct(
@@ -13,7 +15,9 @@ class Curso
         protected array $etiquetas,
         protected array $cursosRelacionados,
         protected array $lecciones,
-        protected Autor $autor
+        protected Autor $autor,
+        //tipo: gratuito o pago
+        protected TipoCurso $tipo = TipoCurso::GRATUITO,
     ) {
 
     }
@@ -28,7 +32,7 @@ class Curso
 
     public function __toString()
     {
-        $html = "<h1>Bienvenido al {$this->titulo}</h1>";
+        $html = "<h1>Bienvenido al {$this->titulo} - {$this->tipo->label()}</h1>";
         $html .= "<h2>{$this->subtitulo}</h2>";
         $html .= "<p>{$this->descripcion}</p>";
 
